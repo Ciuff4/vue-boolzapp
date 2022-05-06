@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILS */
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.d-flex{
+    display: flex;
+}
+
+i{
+    color: #B1B1B1;
+}
+
+/* /UTILS */
+
+.main-wrapper{
+    position: relative;
+    font-family: 'Lato', sans-serif;
+}
+
+.top-background{
+    height: 10vh;
+    background-color: #239586;
+}
+
+.bottom-background{
+    height: calc(100vh - 10vh);
+    background-color: #D6DBD8;
+}
+
+.wrapper{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 90%;
+}
+
+.aside{
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: #FAFBFB;
+}
+
+.top-aside{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #EAEAEA;
+    border-right: 1px solid #E0E0E0;
+}
+
+.utente{
+    align-items: center;
+}
+
+.utente .pic{
+    margin-left: 8px;
+}
+
+.settings{
+    align-items: center;
+}
+
+.settings i{
+    padding: 4px;
+}
+
+.notifica-messaggi{
+    display: flex;
+    height: 55px;
+    background-color: #8EDAFC;
+}
+
+.notifica-messaggi i{
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.notifica-messaggi div p{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #557D8E;
+}
+
+.contacts{
+    height: calc(100% - 55px - 60px);
+    overflow: auto;
+}
+
+.friend-chat{
+    display: flex;
+    position: relative;
+    height: 55px;
+}
+
+.pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.pic img{
+    width: 100%;
+}
+
+.date{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.section{
+    float: left;
+    width: 60%;
+    height: 100%;
+    background-color: blue;
+}
+
+.top-section{
+    height: 60px;
+    background-color: #EAEAEA;
+}
