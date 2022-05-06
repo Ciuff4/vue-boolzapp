@@ -18,13 +18,20 @@
 
 i{
     color: #B1B1B1;
+    cursor: pointer;
 }
 
 /* /UTILS */
+/* body{
+    background: repeating-linear-gradient(to bottom, #239586 0%, #239586 50px, #D6DBD8 100%, #D6DBD8 100%);
+} */
 
-.main-wrapper{
-    position: relative;
+.wrapper{
     font-family: 'Lato', sans-serif;
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    background-color: red;
 }
 
 .top-background{
@@ -37,15 +44,9 @@ i{
     background-color: #D6DBD8;
 }
 
-.wrapper{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 90%;
-}
 
+
+/* ASIDE */
 .aside{
     float: left;
     width: 40%;
@@ -74,7 +75,8 @@ i{
 }
 
 .settings i{
-    padding: 4px;
+    padding: 7px;
+    cursor: pointer;
 }
 
 .notifica-messaggi{
@@ -99,15 +101,48 @@ i{
     color: #557D8E;
 }
 
-.contacts{
-    height: calc(100% - 55px - 60px);
-    overflow: auto;
+.search-contacts{
+    height: 40px;
+}
+
+.search-contacts button{
+    border: none;
+    border-right: 1px solid #E0E0E0;
+    background-color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.search-contacts button:hover{
+    border: 1px solid blue;
+    background-color: #E0E0E0;
+}
+
+.search-contacts button:hover i{
+    color: white;
+}
+
+.search-contacts input{
+    width: 80%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+.search-contacts input:hover{
+    border: 1px solid blue;
+}
+
+.chats{
+    height: calc( 100% - 155px);
+    overflow-y: auto;
 }
 
 .friend-chat{
     display: flex;
     position: relative;
     height: 55px;
+    width: 95%;
 }
 
 .pic{
@@ -127,14 +162,88 @@ i{
     right: 0;
 }
 
+/* /ASIDE */
+
+
+/* SECTION */
 .section{
     float: left;
     width: 60%;
     height: 100%;
-    background-color: blue;
 }
 
+/* TOP-SECTION */
 .top-section{
     height: 60px;
     background-color: #EAEAEA;
+    justify-content: space-between;
+}
+
+.active-user{
+    display: flex;
+    align-items: center;
+}
+
+.info-user p{
+    color: #B1B1B1;
+}
+
+/* MAIN-SECTION */
+.main-section{
+    height: calc(100% - 120px);
+    overflow-y: auto;
+    background-image: url("/assets/img/mine.jpg");
+}
+
+.message{
+    border-radius: 10px;
+    position: relative;
+    min-width: 200px;
+    max-width: 60%;
+    min-height: 60px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.sent{
+    float: right;
+    background-color: #D5F9BA;
+}
+
+.recived{
+    float: left;
+    background-color: white;
+}
+
+.message i{
+    position: absolute;
+    top: 5px;
+    right: 12px;
+}
+
+
+.message span{
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    font-size: 10px;
+}
+/* BOTTOM-SECTION */
+
+.bottom-section{
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60px;
+    background-color: #EAEAEA;
+}
+
+.bottom-section input{
+    width: 80%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+.bottom-section input:hover{
+    border: 1px solid blue;
 }
