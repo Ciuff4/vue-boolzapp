@@ -12,10 +12,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app" class="main-wrapper">
-        <div class="top-background"></div>
-        <div class="bottom-background"></div>
-        <div class="wrapper clearfix">
+    <div id="app" class="wrapper clearfix">
+        
+        
             <!-- ASIDE COLUMN -->
             <div class="aside">
                 <!-- TOP-ASIDE -->
@@ -42,33 +41,68 @@
                     </div>
                 </div>
 
-                <!-- CHATS +SEARCH-BAR -->
-                <div class="contacts">
-                    <div class="search-contacts">
+                <!-- SEARCH-BAR -->
+                <div class="search-contacts">
+                    <button>
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                    <div class="chats">
-                        <div
-                        class="friend-chat"
-                        v-for="(chat, index) in chats">
-                            <div class="pic">
-                                <img :src="assets/img/avatar[chats[1].avatar].jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>Nome</h3>
-                                <div class="last-text">ciao</div>
-                            </div>
-                            <div class="date">05/05/2022</div>
+                    </button>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
+                <!-- CHATS -->
+                <div class="chats">
+                    <div
+                    class="friend-chat"
+                    v-for="(chat, index) in chats"
+                    @click="changeUser(index)">
+                        <div class="pic">
+                            <img :src="`assets/img/avatar${chat.avatar}.jpg`" alt="">
                         </div>
+                        <div class="text">
+                            <h3>{{chat.name}}</h3>
+                            <div class="last-text">ciao</div>
+                        </div>
+                        <div class="date">05/05/2022</div>
                     </div>
                 </div>
             </div>
             <!-- SECTION COLUMN -->
             <div class="section">
-                <div class="top-section"></div>
+                <div class="top-section d-flex">
+                    <div class="active-user">
+                        <div class="pic">
+                            <img :src="`assets/img/avatar${currentUser.avatar}.jpg`" alt="">
+                        </div>
+                        <div class="info-user">
+                            <h3>{{currentUser.name}}</h3>
+                            <p>Ultimo accesso oggi alle 00:00</p>
+                        </div>
+                    </div>
+                    <div class="settings d-flex">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="main-section clearfix">
+                    <div class="message sent">
+                        <p>ciao a tutti quanti Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa, nulla laudantium id deserunt at.</p>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <span>06/05/2022 00:00:00</span>
+                    </div>
+                    <div class="message recived">
+                        <p>ciao a tutti quanti Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa, nulla laudantium id deserunt at.</p>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <span>06/05/2022 00:00:00</span>
+                    </div>
+                </div>
+                <div class="bottom-section d-flex">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
             </div>
-        </div>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>
