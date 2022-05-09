@@ -190,6 +190,7 @@ i{
 
 /* MAIN-SECTION */
 .main-section{
+    width: 100%;
     height: calc(100% - 120px);
     overflow-y: auto;
     background-image: url("/assets/img/mine.jpg");
@@ -214,6 +215,10 @@ i{
 .received{
     float: left;
     background-color: white;
+}
+
+.message p{
+    max-width: 90%;
 }
 
 .message i{

@@ -163,34 +163,38 @@ const app= new Vue({
                         status: 'received'
                     }
                 ],
-            },{
-                name: 'Davide',
-                avatar: '_8',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                        status: 'received'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:51:00',
-                        message: 'OK!!',
-                        status: 'received'
-                    }
-                ],
             }
         ],
         currentUser: 0,
+        newMessage:"",
     },
     methods:{
         changeUser(index){
             this.currentUser=this.chats[index];
+        },
+        createMessage(){
+            const message={
+                date: '10/01/2020 15:51:00',
+                message: this.newMessage,
+                status: 'sent'
+            };
+            this.newMessage="";
+            return message;
+        },
+        botAnswerMessage(){
+            const botMessage={
+                date: '10/01/2020 15:51:00',
+                message: "Sono pieno di lavoro non posso rispondere",
+                status: 'received'
+            };
+            return botMessage;
+        },
+        addMessage(currentUser){
+            currentUser.messages.push(this.createMessage());
+            setTimeout(()=>{
+                currentUser.messages.push(this.botAnswerMessage());
+            },1000);
+            
         }
     }
 })

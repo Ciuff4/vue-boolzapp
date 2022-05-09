@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/style.css">
-    <title>Document</title>
+    <title>Boolzap</title>
 </head>
 <body>
     <div id="app" class="wrapper clearfix">
@@ -86,16 +86,20 @@
                 </div>
                 <div class="main-section clearfix">
                     <div v-for="(message, index) in currentUser.messages"
-                    class="message"
+                    class="message d-flex"
                         :class="message.status==='sent' ? 'sent':'received'">
                         <p>{{message.message}}</p>
                         <i class="fa-solid fa-chevron-down"></i>
-                        <span>06/05/2022 00:00:00</span>
+                        <span>{{message.date}}</span>
                     </div>
                 </div>
                 <div class="bottom-section d-flex">
                     <i class="fa-solid fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input 
+                    type="text" 
+                    placeholder="Scrivi un messaggio"
+                    v-model="newMessage"
+                    v-on:keyup.enter="addMessage(currentUser)">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
