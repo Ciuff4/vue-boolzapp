@@ -31,7 +31,6 @@ i{
     width: 80%;
     height: 90vh;
     margin: 0 auto;
-    background-color: red;
 }
 
 .top-background{
@@ -143,6 +142,10 @@ i{
     position: relative;
     height: 55px;
     width: 95%;
+}
+
+.friend-chat.active{
+    background-color: rgba(0, 0, 0, 0.194);
 }
 
 .pic{

@@ -53,6 +53,7 @@
                 <div class="chats">
                     <div
                     class="friend-chat"
+                    :class="(currentUser===chats[index]) ? 'active': '' "
                     v-for="(chat, index) in chats"
                     @click="changeUser(index)">
                         <div class="pic">
