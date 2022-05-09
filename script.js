@@ -167,6 +167,8 @@ const app= new Vue({
         ],
         currentUser: 0,
         newMessage:"",
+        lettersTyped:"",
+        showChat:"",
     },
     methods:{
         changeUser(index){
@@ -195,6 +197,24 @@ const app= new Vue({
                 currentUser.messages.push(this.botAnswerMessage());
             },1000);
             
-        }
+        },
+        createArrLetters(){
+            const arrLetters= this.lettersTyped.split("");
+            console.log(arrLetters);
+            for (chat of this.chats) {
+                const nameArr=chat.name.split("");
+                console.log(nameArr);
+                
+            } 
+        },
+        // compareArrChat(chat){
+        //     createArrLetters();
+        //     for ( chat of this.chats) {
+        //         if(chat.name.split("").includes(letter)){
+        //             this.showChat.push(chat)
+        //             console.log(showChat);
+        //         }
+        //     }
+        // }
     }
 })
