@@ -85,13 +85,10 @@
                     </div>
                 </div>
                 <div class="main-section clearfix">
-                    <div class="message sent">
-                        <p>ciao a tutti quanti Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa, nulla laudantium id deserunt at.</p>
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <span>06/05/2022 00:00:00</span>
-                    </div>
-                    <div class="message recived">
-                        <p>ciao a tutti quanti Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa, nulla laudantium id deserunt at.</p>
+                    <div v-for="(message, index) in currentUser.messages"
+                    class="message"
+                        :class="message.status==='sent' ? 'sent':'received'">
+                        <p>{{message.message}}</p>
                         <i class="fa-solid fa-chevron-down"></i>
                         <span>06/05/2022 00:00:00</span>
                     </div>

@@ -186,7 +186,7 @@ const app= new Vue({
                 ],
             }
         ],
-        currentUser: "",
+        currentUser: 0,
     },
     methods:{
         changeUser(index){

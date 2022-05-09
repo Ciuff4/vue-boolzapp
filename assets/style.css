@@ -203,6 +203,7 @@ i{
     min-height: 60px;
     padding: 5px;
     margin-top: 10px;
+    clear: both;
 }
 
 .sent{
@@ -210,7 +211,7 @@ i{
     background-color: #D5F9BA;
 }
 
-.recived{
+.received{
     float: left;
     background-color: white;
 }
